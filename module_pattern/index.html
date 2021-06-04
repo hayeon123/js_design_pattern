@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    (function (window){
+      var myLibrary = {
+        helloWorld : function () { 
+          alert("Hello World!"); 
+        }, 
+        hello: {
+          world: function() {
+            alert("Hello Module!");
+          }
+        }
+      };
+      window.myLibrary  = myLibrary;
+    }(window))
+
+    myLibrary.helloWorld(); 
+    myLibrary.hello.world();
+    
+
+    (function (indows, undefined){
+      var _myLibrary = window.myLibrary; 
+      if(!_myLibrary){
+        _myLibrary = {}
+      }
+      if(!_myLibrary.unikys){
+        _myLibrary.unikys ={}
+      }
+      window.myLibrary  = _myLibrary;
+    }(window));
+  </script>   
+</head>3
+<body>
+
+</body>
+</html>
